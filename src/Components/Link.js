@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 const Link = ({ active, children, onClick }) => (
   <button
+    className="linkbutton"
     onClick={onClick}
     disabled={active}
     style={{

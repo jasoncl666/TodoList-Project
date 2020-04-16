@@ -3,6 +3,10 @@ import Footer from './Footer'
 import AddTodo from '../Containers/AddTodo'
 import VisibleTodoList from '../Containers/VisibleTodoList'
 
+import '../Css/App.css'
+
+
+
 const App = () => (
   <div>
     <AddTodo />
@@ -10,5 +14,6 @@ const App = () => (
     <Footer />
   </div>
 )
+
 
 export default App

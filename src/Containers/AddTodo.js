@@ -1,25 +1,67 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../Actions'
 
-const AddTodo = ({ dispatch }) => {
-  let input
+function AddTodo ({ dispatch }) {
+
+  const [addPanelOn, setAddPanelState] = useState(false)
+
+  // input field reference
+  let input = {
+    content: "",
+    frequency: ""
+  }
+
+  let value = {
+    content: "",
+    frequency: ""
+  }
+
+  function onAddPanelOpen(){
+    setAddPanelState(true)
+  }
+
+  function onAddPanelClose(){
+    setAddPanelState(false)
+  }
 
   return (
     <div>
-      <form
+
+      {!addPanelOn && <button onClick={onAddPanelOpen}>Add Goal</button>}
+      
+      {addPanelOn && <form
         onSubmit={e => {
           e.preventDefault()
-          if (!input.value.trim()) {
+
+          // error check
+          if (!input.content.value.trim() || !input.frequency.value.trim()) {
+            console.log("error input")
             return
           }
-          dispatch(addTodo(input.value))
-          input.value = ''
+
+          // copy input values to "value" object and reset "input" object
+          Object.entries(input).map(entry => {
+
+            let key = entry[0]
+            let val = entry[1].value
+
+            value[key] =val
+
+            entry[1].value = ''
+          })
+
+          dispatch(addTodo(value))
+
+          onAddPanelClose()
         }}
       >
-        <input ref={node => (input = node)} />
+        <input ref={node => (input.content = node)} placeholder={"content"}/>
+        <input ref={node => (input.frequency = node)} placeholder={"frequency"}/>
         <button type="submit">Add Todo</button>
-      </form>
+      </form>}
+
+
     </div>
   )
 }

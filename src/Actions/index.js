@@ -1,8 +1,16 @@
 let nextTodoId = 0
-export const addTodo = text => ({
+
+export const addTodo = todo => ({
   type: 'ADD_TODO',
   id: nextTodoId++,
-  text
+  content: todo.content,
+  frequency: todo.frequency
+})
+
+
+export const deleteTodo = id => ({
+  type: 'DELETE_TODO',
+  id
 })
 
 export const setVisibilityFilter = filter => ({
