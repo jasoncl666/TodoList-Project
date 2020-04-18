@@ -7,13 +7,31 @@ import {createStore} from "redux";
 
 import rootReducer from './Reducers';
 
-import {addTodo} from "./Actions";
+import {addTodo, setCurTodo} from "./Actions";
 
 const store=createStore(rootReducer)
 
+// const todo1 = {
+//   content: "one",
+//   frequency: "3",
+//   progress: "4"
+// }
+
+// const todo2 = {
+//   content: "two",
+//   frequency: "3",
+//   progress: "8"
+// }
+
+
+
 // const unsubscribe = store.subscribe(() => console.log(store.getState()))
 
-// store.dispatch(addTodo({content: 'Learn about actions', frequency: '2'}))
+// store.dispatch(addTodo(todo1))
+// store.dispatch(setCurTodo(todo1))
+// store.dispatch(addTodo(todo2))
+// store.dispatch(setCurTodo(todo2))
+
 
 // unsubscribe()
 

@@ -9,12 +9,14 @@ function AddTodo ({ dispatch }) {
   // input field reference
   let input = {
     content: "",
-    frequency: ""
+    frequency: "",
+    progress: ""
   }
 
   let value = {
     content: "",
-    frequency: ""
+    frequency: "",
+    progress: ""
   }
 
   function onAddPanelOpen(){
@@ -35,7 +37,7 @@ function AddTodo ({ dispatch }) {
           e.preventDefault()
 
           // error check
-          if (!input.content.value.trim() || !input.frequency.value.trim()) {
+          if (!input.content.value.trim() || !input.frequency.value.trim() || !input.progress.value.trim()) {
             console.log("error input")
             return
           }
@@ -58,6 +60,7 @@ function AddTodo ({ dispatch }) {
       >
         <input ref={node => (input.content = node)} placeholder={"content"}/>
         <input ref={node => (input.frequency = node)} placeholder={"frequency"}/>
+        <input ref={node => (input.progress = node)} placeholder={"progress out of 10"}/>
         <button type="submit">Add Todo</button>
       </form>}
 

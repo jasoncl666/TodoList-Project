@@ -1,0 +1,15 @@
+.app-container{
+    width: 90vw;
+    height: 90vh;
+    position: relative;
+    background-color: rgb(220, 220, 220);
+    margin: auto auto;
+    padding: 10px 2%;
+
+}
+
+.filter-container{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}

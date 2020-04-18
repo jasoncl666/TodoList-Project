@@ -1,0 +1,30 @@
+.todo-item-container{
+    width: 50%;
+    height: 5em;
+    background: rgb(101,137,192);
+    color: white;
+    border-radius: 3px;
+    margin-top: 1rem;
+}
+
+.todo-progress-container{
+    width: 90%;
+    margin: 0.5rem 5%;
+    height: 0.5em;
+    background: rgb(234, 170, 123);
+}
+
+.todo-current-progress{
+    /* width: 50%; */
+    height: 0.5em;
+    background: rgb(231, 135, 63);
+}
+
+.todo-detail-link-container{
+    width: 100%;
+    height: 1.5em;
+    background: rgb(129, 215, 247);
+    font-size: 12px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
