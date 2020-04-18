@@ -1,23 +1,27 @@
 .todo-item-container{
     width: 50%;
-    height: 5em;
+    height: 6em;
     background: rgb(101,137,192);
     color: white;
     border-radius: 3px;
     margin-top: 1rem;
+    position: relative;
 }
 
 .todo-progress-container{
     width: 90%;
     margin: 0.5rem 5%;
-    height: 0.5em;
-    background: rgb(234, 170, 123);
+    height: 0.7em;
+    /* background: rgb(234, 170, 123); */
+    /* background: rgb(197, 235, 152); */
 }
 
 .todo-current-progress{
     /* width: 50%; */
-    height: 0.5em;
-    background: rgb(231, 135, 63);
+    height: 0.7em;
+    /* background: rgb(231, 135, 63); */
+    /* background: rgb(135, 190, 90); */
+
 }
 
 .todo-detail-link-container{
@@ -27,4 +31,22 @@
     font-size: 12px;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
+    position: absolute;
+    bottom: 0;
+}
+
+.todo-detail-link-container a {
+    text-decoration: none;
+    color: white;
+    margin-left: 5%;
+}
+
+.todo-detail-link-container button {
+    float: right;
+    margin-right: 4%;
+    background: inherit;
+    border: none;
+    color: rgb(219, 79, 69);
+    /* color: white; */
+    font-weight: 600;
 }

@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
+import { Link } from "react-router-dom"
 
+import ProgressBar from './ProgressBar'
 
 class Todo extends Component {
 
@@ -33,15 +35,16 @@ class Todo extends Component {
           
         </div>
     
-        <button onClick={onDelete}>Delete</button>
-    
-        <div className="todo-progress-container">
+        {/* <div className="todo-progress-container">
           <div className="todo-current-progress" style={{width: todo.progress+"0%"}}></div>
-        </div>
+        </div> */}
 
-        <div className="todo-detail-link-container" onClick={this.onDetailClick}>
-          {/* {current_todo.content} */}
-          details
+        <ProgressBar type={"group"} progress={todo.progress}/>
+        <ProgressBar type={"user"} progress={todo.progress}/>
+
+        <div className="todo-detail-link-container">
+          <Link to="/detail" onClick={this.onDetailClick}>Details</Link>
+          <button onClick={onDelete}>Delete</button>
         </div>
       </div>
     )    
