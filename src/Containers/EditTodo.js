@@ -23,8 +23,14 @@ class EditTodo extends Component {
             editTodo
         } = this.props
 
+        console.log(current_todo)
+
         return(
             <div>
+                <div>
+                    {current_todo.text}
+                </div>
+
                 <form
                     onSubmit={e => {
                         e.preventDefault()
@@ -37,8 +43,10 @@ class EditTodo extends Component {
             
                         // copy input values to "value" object and reset "input" object
                         todo.progress = input.progress.value.trim()
+                        todo.id = current_todo.id
                         input.progress = ''
-                        editTodo()
+                        console.log(todo)
+                        editTodo(todo)
                     }}>
                     
                     <input ref={node => (input.progress = node)} placeholder={"current progress out of 10"}/>

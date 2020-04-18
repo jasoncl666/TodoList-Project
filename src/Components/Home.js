@@ -1,5 +1,5 @@
 import React from 'react'
-import { Linkc} from "react-router-dom"
+import { Link } from "react-router-dom"
 
 import FilterTab from './FilterTab'
 import AddTodo from '../Containers/AddTodo'
@@ -12,6 +12,8 @@ const Home = () => (
       <AddTodo />
       <VisibleTodoList />
       <FilterTab />
+
+      <Link to="/detail">Detail</Link>
     </div>
   
 )
