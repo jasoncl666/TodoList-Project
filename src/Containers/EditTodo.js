@@ -1,42 +1,60 @@
-import React, {useState} from 'react'
+import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { editTodo } from '../Actions'
 
-function EditTodo ({dispatch}) {
+class EditTodo extends Component {
 
-    let input = {
-        progress: ""
+    componentWillMount(){
+
     }
 
-    let todo = {
-        id: "",
-        progress: ""
-    }
+    render(){
+        let input = {
+            progress: ""
+        }
 
-    return(
-        <div>
-            <form
-                 onSubmit={e => {
-                    e.preventDefault()
-          
-                    // error check
-                    if (!input.progress.value.trim()) {
-                      console.log("invalid progress update")
-                      return
-                    }
-          
-                    // copy input values to "value" object and reset "input" object
-                    todo.progress = input.progress.value.trim()
-                    input.progress = ''
-                    dispatch(editTodo(todo))
-                }}>
-                
-                <input ref={node => (input.progress = node)} placeholder={"current progress out of 10"}/>
-                <button type="submit">Update Progress</button>
+        let todo = {
+            id: "",
+            progress: ""
+        }
 
-            </form>
-        </div>
-    )
+        const{
+            current_todo,
+            editTodo
+        } = this.props
+
+        return(
+            <div>
+                <form
+                    onSubmit={e => {
+                        e.preventDefault()
+            
+                        // error check
+                        if (!input.progress.value.trim()) {
+                        console.log("invalid progress update")
+                        return
+                        }
+            
+                        // copy input values to "value" object and reset "input" object
+                        todo.progress = input.progress.value.trim()
+                        input.progress = ''
+                        editTodo()
+                    }}>
+                    
+                    <input ref={node => (input.progress = node)} placeholder={"current progress out of 10"}/>
+                    <button type="submit">Update Progress</button>
+
+                </form>
+            </div>
+        )}
 }
 
-export default connect()(EditTodo)
+const mapStateToProps = state => ({
+    current_todo: state.currentTodo
+})
+
+const mapDispatchToProps = dispatch => ({
+    editTodo: todo => dispatch(editTodo(todo))
+  })
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditTodo)

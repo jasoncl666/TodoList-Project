@@ -1,18 +1,24 @@
 import React from 'react'
-import FilterTab from './FilterTab'
-import AddTodo from '../Containers/AddTodo'
-import VisibleTodoList from '../Containers/VisibleTodoList'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom"
 
-import '../Css/App.css'
-
+import Home from './Home'
 
 
 const App = () => (
-  <div className="app-container">
-    <AddTodo />
-    <VisibleTodoList />
-    <FilterTab />
-  </div>
+  <Router>
+      <Switch>
+          <Route path="/">
+              <Home />
+          </Route>
+
+      </Switch>
+  </Router>
+  
 )
 
 
