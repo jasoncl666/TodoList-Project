@@ -1,72 +1,83 @@
-import React, {useState} from 'react'
+import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../Actions'
 
-function AddTodo ({ dispatch }) {
+import InputItem from '../Components/InputItem'
+import InputItemFrequency from '../Components/InputItemFrequency'
 
-  const [addPanelOn, setAddPanelState] = useState(false)
+class AddTodo extends Component {
 
-  // input field reference
-  let input = {
-    content: "",
-    frequency: "",
-    progress: ""
+  constructor(props){
+    super(props)
+
+    this.state = {
+        content: "",
+        frequency: ""
+    }
+
+    this.handleContentChange = this.handleContentChange.bind(this)
+    this.handleFrequencyChange = this.handleFrequencyChange.bind(this)
   }
 
-  let value = {
-    content: "",
-    frequency: "",
-    progress: ""
+  handleContentChange(event) {
+    // error check
+    if (!event.target.value.trim()){
+      console.log("error input")
+      return
+    }
+    this.setState({content: event.target.value});
   }
 
-  function onAddPanelOpen(){
-    setAddPanelState(true)
+  handleFrequencyChange(event) {
+    // error check
+    if (!event.target.value.trim()){
+      console.log("error input")
+      return
+    }
+    this.setState({frequency: event.target.value});
   }
 
-  function onAddPanelClose(){
-    setAddPanelState(false)
+
+  render(){
+      const {
+        addTodo
+      } = this.props
+
+      return (
+        <div>
+          <form
+            onSubmit={e => {
+              e.preventDefault()
+    
+              addTodo(this.state)
+            }}
+          >
+            <div className="input-container">
+
+                <InputItem title={"Create Group"} placeholder={"e.g. sleep before 12"} onChange={this.handleContentChange}/> 
+                {/* <InputItemFrequency title={"Frequency"} placeholder={"frequency"} onChange={this.handleFrequencyChange}/>  */}
+
+                <div>
+                  <h3>Settings</h3>
+                  <textarea></textarea>
+                </div>
+                
+                <button>All Day</button>
+            </div>
+    
+            
+            {/* <input ref={node => (input.progress = node)} placeholder={"progress out of 10"}/> */}
+            <button type="submit">Add Todo</button>
+          </form>
+    
+        </div>
+      )
   }
-
-  return (
-    <div>
-
-      {!addPanelOn && <button onClick={onAddPanelOpen}>Add Goal</button>}
-      
-      {addPanelOn && <form
-        onSubmit={e => {
-          e.preventDefault()
-
-          // error check
-          if (!input.content.value.trim() || !input.frequency.value.trim() || !input.progress.value.trim()) {
-            console.log("error input")
-            return
-          }
-
-          // copy input values to "value" object and reset "input" object
-          Object.entries(input).map(entry => {
-
-            let key = entry[0]
-            let val = entry[1].value
-
-            value[key] =val
-
-            entry[1].value = ''
-          })
-
-          dispatch(addTodo(value))
-
-          onAddPanelClose()
-        }}
-      >
-        <input ref={node => (input.content = node)} placeholder={"content"}/>
-        <input ref={node => (input.frequency = node)} placeholder={"frequency"}/>
-        <input ref={node => (input.progress = node)} placeholder={"progress out of 10"}/>
-        <button type="submit">Add Todo</button>
-      </form>}
-
-
-    </div>
-  )
+  
 }
 
-export default connect()(AddTodo)
+const mapDispatchToState = dispatch => ({
+  addTodo: todo => dispatch(addTodo(todo))
+}
+)
+export default connect(null, mapDispatchToState)(AddTodo)

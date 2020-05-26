@@ -34,10 +34,6 @@ class Todo extends Component {
           {todo.frequency}
           
         </div>
-    
-        {/* <div className="todo-progress-container">
-          <div className="todo-current-progress" style={{width: todo.progress+"0%"}}></div>
-        </div> */}
 
         <ProgressBar type={"group"} progress={todo.progress}/>
         <ProgressBar type={"user"} progress={todo.progress}/>
@@ -50,6 +46,8 @@ class Todo extends Component {
     )    
   }
 } 
+
+
 Todo.propTypes = {
   onClick: PropTypes.func.isRequired,
   onDelete: PropTypes.func.isRequired,

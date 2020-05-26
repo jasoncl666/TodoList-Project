@@ -1,0 +1,215 @@
+.create-container {
+    background: rgb(241, 236, 223);
+}
+
+.input-container{
+    display: grid;
+    width: 90%;
+    margin: 0 auto;
+    grid-template-rows: auto auto 5em 5em;
+}
+
+.input-container > div {
+    margin-bottom: 1rem;
+}
+
+.input-container textarea {
+    width: calc(100% - 8px);
+    resize: none;
+    border: 2px solid rgb(145, 155, 151);
+    border-radius: 3px;
+    opacity: 0.5;
+}
+
+.freqency-day-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+}
+
+.freqency-day-container > div {
+    text-align: center;
+}
+
+.freqency-day-container button {
+    width: 80%;
+    margin: 10px auto;
+    height: 2.5em;
+}
+
+[class*="input-item"]{
+    height: fit-content;
+    /* background: rgb(252, 157, 89); */
+    background: rgb(145, 155, 151);
+
+    border-radius: 4px;
+}
+
+
+.input-item-name .input-content{
+    display: grid;
+    grid-template-rows: 2em 3em;
+    text-align: center;
+    border-radius: 4px;
+    position: relative;
+    height: 5em;
+}
+
+.input-content .header {
+    display: grid;
+    /* grid-template-columns: 5% 55% auto; */
+}
+
+.input-content .header > div {
+    height: 1em;
+}
+
+.input-content .bar {
+    border-bottom: 2px solid white;
+}
+
+[class*="input-item"] .input-content h2 {
+    font-size: 17px;
+    font-weight: 800;
+    float: left;
+    margin: 5px auto 6px 5%;
+    color: white;
+}
+
+.input-item-name .input-content input {
+    height: 3em;
+    width: calc(60% - 6px);
+    margin: 0 auto;
+    background: rgb(241, 221, 189);
+    border: 2px solid rgb(248, 136, 61);
+    border-radius: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.input-item-name .input-content button {
+    height: 2em;
+    background: inherit;
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    border: 2px solid rgb(252, 227, 194);
+    border-radius: 2px;
+    color: white;
+    font-weight: 500;
+}
+
+.input-item-name .input-types{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    background: rgb(250, 196, 160);
+    height: 2em;
+}
+
+.input-item-name .input-types > div {
+    position: relative;
+    text-align: center;
+    justify-content: center;
+}
+
+.input-item-name .input-types  button {
+    width: 90%;
+    margin: 1em auto 0 auto;
+    bottom: 0;
+    background: rgb(114, 169, 221);
+    border: none;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    color: white;
+    font-weight: 600;
+}
+
+.input-item-name .input-types  button:hover{
+    border-bottom: 3px solid white;
+}
+
+.input-item-frequency .input-content{
+    display: grid;
+    grid-template-rows: 2em 3em 2em 5em;
+    text-align: center;
+
+    border-radius: 4px;
+    position: relative;
+    height: 10em;
+}
+
+.input-item-frequency .freq-options-detail{
+    display: grid;
+    grid-template-columns: 117px 117px 117px;
+}
+
+.input-item-frequency .freq-options-detail > div {
+    text-align: center;
+}
+
+.input-item-frequency .freq-options-detail button {
+    width: 80%;
+    height: 3em;
+    margin: 10px auto 0 auto;
+    /* background: rgb(124, 188, 152); */
+    background: rgba(255, 208, 139, 0.87);
+    color: rgb(126, 113, 110);
+    font-weight: 500;
+    border: 2px solid rgb(251, 244, 189);
+    border-radius: 3px;
+}
+
+/* .input-item-frequency .freq-options-detail .dayly-btn{
+    background: rgb(101, 137, 192)
+}
+
+.input-item-frequency .freq-options-detail .weekly-btn{
+    background: rgb(123, 190, 152)
+}
+
+.input-item-frequency .freq-options-detail .monthly-btn{
+    background: rgb(126, 187, 108)
+} */
+
+.input-item-frequency .options {
+    display: grid;
+    height: 4em;
+}
+
+.input-item-frequency .options>div{
+    margin-top: 10px;
+}
+
+.input-item-frequency .options button {
+    width: 80%;
+    color: white;
+    height: 2.5em;
+    border-radius: 3px;
+}
+.dayly-options, .monthly-options {
+    grid-template-columns: 117px 117px 117px ;
+}
+
+.weekly-options {
+    grid-template-columns: 50.14px 50.14px 50.14px 50.14px 50.14px 50.14px 50.14px;
+    grid-auto-rows: auto auto;
+}
+
+.weekly-options .all-btn {
+    grid-column: 1 / span 4;
+}
+
+
+.dayly-options button {
+    background: rgb(41, 102, 173);
+}
+
+.weekly-options button {
+    background: rgb(73, 161, 101);
+}
+
+.monthly-options button {
+    background: rgb(90, 165, 67)
+}
+
+

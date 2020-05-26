@@ -7,6 +7,7 @@ import {
 
 import Home from '../Pages/Home'
 import Detail from './Detail'
+import CreateGroup from '../Pages/CreateGroup'
 
 
 const App = () => (
@@ -17,6 +18,9 @@ const App = () => (
           </Route>
           <Route exact path="/detail">
               <Detail />
+          </Route>
+          <Route exact path="/create">
+              <CreateGroup />
           </Route>
       </Switch>
   </Router>

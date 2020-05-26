@@ -4,6 +4,11 @@ import { editTodo } from '../Actions'
 
 class EditTodo extends Component {
 
+    constructor(props){
+        super(props);
+        this.inputRef = React.createRef();
+    }
+
     componentWillMount(){
 
     }
@@ -35,21 +40,30 @@ class EditTodo extends Component {
                     onSubmit={e => {
                         e.preventDefault()
             
-                        // error check
-                        if (!input.progress.value.trim()) {
-                        console.log("invalid progress update")
-                        return
-                        }
+                        // // error check
+                        // if (!input.progress.value.trim()) {
+                        // console.log("invalid progress update")
+                        // return
+                        // }
             
                         // copy input values to "value" object and reset "input" object
-                        todo.progress = input.progress.value.trim()
-                        todo.id = current_todo.id
-                        input.progress = ''
-                        console.log(todo)
-                        editTodo(todo)
+                        // todo.progress = input.progress.value.trim()
+                        // todo.id = current_todo.id
+                        // input.progress = ''
+                        // console.log(todo)
+                        // editTodo(todo)
+
+                        todo.id = current_todo.id;
+                        todo.progress = this.inputRef.current.value;
+                        console.log("print input current value: " + this.inputRef.current.value);
+
+                        editTodo(todo);
+
+                        this.inputRef.current.value = null;
+
                     }}>
                     
-                    <input ref={node => (input.progress = node)} placeholder={"current progress out of 10"}/>
+                    <input ref={this.inputRef} placeholder={"current progress out of 10"}/>
                     <button type="submit">Update Progress</button>
 
                 </form>

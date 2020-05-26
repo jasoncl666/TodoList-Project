@@ -7,7 +7,7 @@ const todos = (state = [], action) => {
             id: action.id,
             text: action.content,
             frequency: action.frequency,
-            progress: action.progress,
+            progress: 0,
             completed: false,
             deleted: false
           }
