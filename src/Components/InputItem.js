@@ -15,8 +15,9 @@ const InputItem = ({title, placeholder, onChange}) => {
     return (
         <div className="input-item-name">
             <div className="input-content">
-                <Divider title={title} titleWidth={"55%"}/>
+
                 <div className="input">
+                    <h3>{title}</h3>
                     <input placeholder={placeholder} onChange={onChange}/>
                     {/* <button type="button" onClick={handleTypeClick}>Goal Type</button> */}
                 </div> 

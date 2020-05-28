@@ -1,6 +1,125 @@
 .create-container {
+
     background: rgb(241, 236, 223);
+    /* opacity: 0.4; */
+    height: 100vh;
+
 }
+
+.add-form{
+    width:100%;
+    height: 95vh;
+    background-image: url("../img/time-management.jpg");
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    position: relative;
+}
+    .add-form .form-header{
+        position: absolute;
+        left: 10%;
+        top: 13%;
+    }
+
+    .add-form  form {
+        width: 30em;
+        height: 45vh;
+        background: rgba(255, 255, 255, 0.9);
+        position: absolute;
+        top: 40%;
+        left: 10%;
+        box-shadow: 0 0 10px 7px rgba(179, 177, 177, 0.577);
+        border-radius: 3px;
+    }
+
+
+        .add-form form [class*="form-"] {
+            display: grid;
+            height: 4em;
+            align-items: center;
+        }
+        .add-form form .form-input{    
+            margin-top: 2em;
+            grid-template-columns: 3em auto;
+        }   
+            .add-form form h3 {
+                font-size: 16px;
+                margin-left: 15px;
+                color: rgb(133, 133, 133);
+            }
+
+            .add-form form input {
+                height: 3em;
+                width: 340px;
+                border-radius: 10px;
+                border: 2px solid red;
+            }
+        
+        .add-form form .form-select {
+            grid-template-columns: 7em auto 5em;
+        }
+            .add-form form select {
+                height: 2em;
+                width: 20em;
+                border-radius: 10px;
+                border: 1px solid purple;
+            }
+        .add-form form .form-friend{    
+            grid-template-columns: 3em auto;
+            height: fit-content;
+        } 
+            .add-form .form-friend>div {
+                width: 340px;
+                height: 3.5em;
+                border-radius: 10px;
+                border: 2px solid rgb(145, 155, 151);
+                /* resize: none; */
+                /* overflow: scroll; */
+                display: grid;
+                grid-template-columns: 50% 50%;
+            }
+            .add-form .form-friend .ui.fluid.dropdown {
+                width: 340px;
+            }
+
+                .add-form .form-friend .ui.fluid.dropdown .text{
+                    color: rgb(145, 155, 151)
+                }
+
+                .add-form .form-friend .ui.fluid.dropdown a.ui.label {
+                    background: white;
+                    font-size: 10px;
+                    border: 1px solid deepskyblue;
+                }
+
+                .add-form .form-friend .ui.fluid.dropdown .visible.menu{
+                    overflow: auto;
+                    max-height: 5em;
+                }
+        
+        .add-form form button{
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 8em;
+            height: 3em;
+            background: inherit;
+            border: 1px solid rgb(145, 155, 151);
+            border-radius: 4px;
+            justify-content: center;
+            color: white;
+            background: yellowgreen;
+        }
+
+        .add-form form button.back-btn{
+            right: 10em;
+            background: inherit;
+        }
+            .add-form form button.back-btn a {
+                text-decoration: none;
+                color: black;
+            }
+
 
 .input-container{
     display: grid;

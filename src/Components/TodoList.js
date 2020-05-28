@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Todo from './Todo'
 
-import "../Css/Todos.css"
+import "../Assets/css/Todos.css"
 
 const TodoList = ({ 
   todos, 
